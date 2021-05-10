@@ -1,0 +1,15 @@
+BlogScript/.vs
+BlogScript/bin/
+BlogScript/obj/
+BlogScript/BlogScript.Entities/bin
+BlogScript/BlogScript.Entities/obj
+BlogScript/BlogScript.DataAccess/bin
+BlogScript/BlogScript.DataAccess/obj
+BlogScript/BlogScript.Business/bin
+BlogScript/BlogScript.Business/obj
+BlogScript/BlogScript.WebApi/bin
+BlogScript/BlogScript.WebApi/obj
+BlogScript/BlogScript.DTO/bin
+BlogScript/BlogScript.DTO/obj
+BlogScript/BlogScript.UI/bin
+BlogScript/BlogScript.UI/obj
