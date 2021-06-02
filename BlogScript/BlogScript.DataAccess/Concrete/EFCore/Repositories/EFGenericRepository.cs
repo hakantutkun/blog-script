@@ -43,6 +43,12 @@ namespace BlogScript.DataAccess.Concrete.EFCore.Repositories
             return await context.Set<TEntity>().FirstOrDefaultAsync(filter);
         }
 
+        public async Task<TEntity> FindByIdAsync(int id)
+        {
+            using var context = new BlogContext();
+            return await context.FindAsync<TEntity>(id);
+        }
+
         public async Task AddAsync(TEntity entity)
         {
             using var context = new BlogContext();

@@ -14,6 +14,7 @@ namespace BlogScript.Business.Abstract
         Task<List<TEntity>> GetAllAsync<TKey>(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TKey>> keySelector);
         Task<List<TEntity>> GetAllAsync<TKey>(Expression<Func<TEntity, TKey>> keySelector);
         Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter);
+        Task<TEntity> FindByIdAsync(int id);
         Task AddAsync(TEntity entity);
         Task UpdateAsync(TEntity entity);
         Task RemoveAsync(TEntity entity);

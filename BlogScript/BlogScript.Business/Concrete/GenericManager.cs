@@ -42,6 +42,10 @@ namespace BlogScript.Business.Concrete
         {
             return await _genericDal.GetAsync(filter);
         }
+        public async Task<TEntity> FindByIdAsync(int id)
+        {
+            return await _genericDal.FindByIdAsync(id);
+        }
 
         public async Task AddAsync(TEntity entity)
         {
