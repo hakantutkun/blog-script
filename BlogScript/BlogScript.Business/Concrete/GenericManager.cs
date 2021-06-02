@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BlogScript.Business.Concrete
 {
-    class GenericManager<TEntity> : IGenericService<TEntity> where TEntity : class, IBlogEntity, new()
+    public class GenericManager<TEntity> : IGenericService<TEntity> where TEntity : class, IBlogEntity, new()
     {
         private readonly IGenericDal<TEntity> _genericDal;
 
