@@ -15,5 +15,10 @@ namespace BlogScript.Business.Concrete
         {
             _genericDal = genericDal;
         }
+
+        public async Task<List<Category>> GetAllSortedById()
+        {
+            return await _genericDal.GetAllAsync(i => i.Id);
+        }
     }
 }
