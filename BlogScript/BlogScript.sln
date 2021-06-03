@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogScript.Business", "Blog
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogScript.WebApi", "BlogScript.WebApi\BlogScript.WebApi.csproj", "{B1F761E4-CA94-4793-8603-270DBAF2FD63}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogScript.DTOs", "BlogScript.DTOs\BlogScript.DTOs.csproj", "{70AB647F-4B6C-4ABA-9383-34671B97A9A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B1F761E4-CA94-4793-8603-270DBAF2FD63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1F761E4-CA94-4793-8603-270DBAF2FD63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1F761E4-CA94-4793-8603-270DBAF2FD63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70AB647F-4B6C-4ABA-9383-34671B97A9A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70AB647F-4B6C-4ABA-9383-34671B97A9A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70AB647F-4B6C-4ABA-9383-34671B97A9A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70AB647F-4B6C-4ABA-9383-34671B97A9A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
