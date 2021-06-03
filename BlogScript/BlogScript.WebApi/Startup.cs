@@ -26,8 +26,12 @@ namespace BlogScript.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // automapper kullanmak icin ekliyoruz
+            services.AddAutoMapper(typeof(Startup));
+
             // bagimliliklari ekledik -> business -> containers -> MicrosoftIoC
             services.AddDependencies();
+
             services.AddControllers();
         }
 
