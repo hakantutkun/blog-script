@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BlogScript.DataAccess.Concrete.EFCore.Repositories
 {
-    public class EfAppUserRepositor : EFGenericRepository<AppUser>, IAppUserDal
+    public class EfAppUserRepository : EFGenericRepository<AppUser>, IAppUserDal
     {
     }
 }
