@@ -1,268 +1,396 @@
 ﻿@model List<BlogListModel>
-<!-- blog posts colum -->
-<div class="col-lg-8">
-
-    @foreach (var blog in Model)
-    {
-        <div class="card single_post">
-            <div class="body">
-                <div class="post-img">
-                    <img class="d-block img-fluid" src="~/img//@blog.ImagePath" alt="First slide">
+<!-- carousel section -->
+<section id="carousel">
+    <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="jumbotron">
+                        <div class="jumbotron-container">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6 text-center jumbotron-image-container">
+                                    <img class="jumbotron-image" src="~/img/desktop.png">
+                                </div>
+                                <div class="col-lg-8 col-md-6 text-left jumbotron-content-container">
+                                    <div>
+                                        <h1 class="display-5 mb-4 font-weight-bold jumbotron-header">
+                                            WPF İle
+                                            Masaüstü Uygulama
+                                            Geliştirme
+                                        </h1>
+                                        <p class="lead jumbotron-content">
+                                            WPF Visual Studio üzerinde C# geliştiricilerine sunulan görsel
+                                            tasarım ortamıdır. Bu araç ile birlikte kullanıcılar görsel açıdan
+                                            her aşamasına müdahale edebileceği uygulamalar geliştirebilmekte. Bu
+                                            noktada ise karşımıza XAML ( extensible application markup language
+                                            ) çıkmakta. Burada kısa bir parantez açarak kısaca XAML (zemıl)
+                                            nedir sorusuna
+                                            cevap verelim.
+                                        </p>
+                                        <div class="jumbotron-button-container">
+                                            <a class="btn btn-primary jumbotron-button ">Devamını Oku</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h3 class="post-title">
-                    <a href="single.html">
-                        @blog.Title
-                    </a>
-                </h3>
-                <p class="post-content">
-                    @blog.ShortDescription
-                </p>
-                <div class="actions">
-                    <a href="javascript:void(0);"
-                       class="btn btn-primary button-style float-right mr-5">Devamını Oku</a>
+                <div class="carousel-item">
+                    <div class="jumbotron">
+                        <div class="jumbotron-container">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6 text-center jumbotron-image-container">
+                                    <img class="jumbotron-image" src="~/img/postgresql.png">
+                                </div>
+                                <div class="col-lg-8 col-md-6 text-left jumbotron-content-container">
+                                    <div>
+                                        <h1 class="display-5 mb-4 font-weight-bold jumbotron-header">
+                                            PostgreSQL
+                                            Dersleri
+                                        </h1>
+                                        <p class="lead jumbotron-content">
+                                            PostgreSQL, güçlü özellikler ve avantajlara sahip, açık kaynaklı ve
+                                            tamamen ücretsiz nesne ilişkisel veri tabanı sistemidir. SQL dilinin
+                                            güvenlik, depolanabilirlik ve ölçeklendirilebilme özelliklerinden
+                                            faydalanan PostgreSQL, birçok alanda veri tabanı yöneticisi olarak
+                                            da kullanılmaktadır. PostgreSQL’in doğuşunun hikayesi 1986 yılına
+                                            dek eskiye dayanıyor.
+                                        </p>
+                                        <div class="jumbotron-button-container">
+                                            <a class="btn btn-primary jumbotron-button ">Devamını Oku</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="jumbotron">
+                        <div class="jumbotron-container">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6 text-center jumbotron-image-container">
+                                    <img class="jumbotron-image" src="~/img/gitlab-runner.png">
+                                </div>
+                                <div class="col-lg-8 col-md-6 text-left jumbotron-content-container">
+                                    <div>
+                                        <h1 class="display-5 mb-4 font-weight-bold jumbotron-header">
+                                            Gitlab Runner
+                                            Kurulumu
+                                        </h1>
+                                        <p class="lead jumbotron-content">
+                                            Gitlab'in geliştirdiği her toolu ayrı bir uygulama
+                                            gibi koşabilme
+                                            vizyonunun güzel
+                                            bir
+                                            örneği bence gitlab-runner. Özünde, gitlab-ci ile oluşturduğumuz
+                                            jobları çalıştırmak
+                                            ve
+                                            çıktılarını
+                                            gitlabe geri göndermek için kullanılan açık kaynak bir projedir...
+                                        </p>
+                                        <div class="jumbotron-button-container">
+                                            <a class="btn btn-primary jumbotron-button ">Devamını Oku</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="post-footer">
-                <ul>
-                    <li><a href="#"><i class="fa fa-user"></i>TechBlog</a></li>
-                    <li><a href="#"><i class="fa fa-comments"></i> 3 Yorum</a></li>
-                </ul>
-            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-    }
+    </div>
+</section>
 
-</div>
+<!-- content section -->
+<section id="content">
 
-<!-- sidebar column -->
-<div class="col-lg-4">
+    <!-- main container -->
+    <div class="container">
 
-    @await Component.InvokeAsync("CategoryList");
+        <div class="row">
+            <div class="col-lg-8">
 
-    <!-- recent posts -->
-    <div class="card card-side">
-        <div class="card-title">
-            Son Yazılar
-        </div>
-        <hr>
-        <!-- first post -->
-        <div class="card-content">
-            <div class="float-left">
-                <img src="~/img/posts/last-1.jpg" width="90" height="90" alt="">
+                @foreach (var blog in Model)
+                {
+                    <div class="card single_post">
+                        <div class="body">
+                            <div class="post-img">
+                                <img class="d-block img-fluid" src="~/img//@blog.ImagePath" alt="First slide">
+                            </div>
+                            <h3 class="post-title">
+                                <a asp-action="BlogDetail" asp-route-id="@blog.Id">
+                                    @blog.Title
+                                </a>
+                            </h3>
+                            <p class="post-content">
+                                @blog.ShortDescription
+                            </p>
+                            <div class="actions">
+                                <a href="javascript:void(0);"
+                                   class="btn btn-primary button-style float-right mr-5">Devamını Oku</a>
+                            </div>
+                        </div>
+                        <div class="post-footer">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-user"></i>TechBlog</a></li>
+                                <li><a href="#"><i class="fa fa-comments"></i> 3 Yorum</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                }
+
             </div>
-            <div class="d-flex justify-content-left align-items-center last-posts-container">
-                <div>
-                    <a href="">Google inks pact for new...</a>
-                    <p class="mt-2 text-info"><i class="fa fa-calendar mr-2"></i>4 Saat Önce</p>
+
+            <!-- sidebar column -->
+            <div class="col-lg-4">
+
+                <!-- categories widget -->
+                @await Component.InvokeAsync("CategoryList")
+
+                <!-- recent posts -->
+                <div class="card card-side">
+                    <div class="card-title">
+                        Son Yazılar
+                    </div>
+                    <hr>
+                    <!-- first post -->
+                    <div class="card-content">
+                        <div class="float-left">
+                            <img src="assets/img/posts/last-1.jpg" width="90" height="90" alt="">
+                        </div>
+                        <div class="d-flex justify-content-left align-items-center last-posts-container">
+                            <div>
+                                <a href="">Google inks pact for new...</a>
+                                <p class="mt-2 text-info"><i class="fa fa-calendar mr-2"></i>4 Saat Önce</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- second post -->
+                    <div class="card-content">
+                        <div class="float-left">
+                            <img src="assets/img/posts/last-2.jpg" width="90" height="90" alt="">
+                        </div>
+                        <div class="d-flex justify-content-left align-items-center last-posts-container">
+                            <div>
+                                <a href="">Google inks pact for new...</a>
+                                <p class="mt-2 text-info"><i class="fa fa-calendar mr-2"></i>24 Temmuz 2021</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- third post -->
+                    <div class="card-content">
+                        <div class="float-left">
+                            <img src="assets/img/posts/last-3.jpg" width="90" height="90" alt="">
+                        </div>
+                        <div class="d-flex justify-content-left align-items-center last-posts-container">
+                            <div>
+                                <a href="">Google inks pact for new...</a>
+                                <p class="mt-2 text-info"><i class="fa fa-calendar mr-2"></i>12 Ağustos 2021</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <!-- second post -->
-        <div class="card-content">
-            <div class="float-left">
-                <img src="~/img/posts/last-2.jpg" width="90" height="90" alt="">
-            </div>
-            <div class="d-flex justify-content-left align-items-center last-posts-container">
-                <div>
-                    <a href="">Google inks pact for new...</a>
-                    <p class="mt-2 text-info"><i class="fa fa-calendar mr-2"></i>24 Temmuz 2021</p>
+
+                <!-- tag cloud -->
+                <div class="card card-side">
+                    <div class="card-title">
+                        Tag Bulutu
+                    </div>
+                    <hr>
+                    <div class="card-cloud-content">
+                        <ul class="list cat-list">
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>C#</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>WPF</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>ASP.NET</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>PostgreSQL</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Programlama</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Css</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Html</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>.Net Core</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Xamarin</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Kotlin</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Ubuntu</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Linux</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Centos</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Mint</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Mobile Development</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Unity</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Php</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>MySQL</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>XAML</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Desktop Development</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>UI/UX</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Design Patterns</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Javascript</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Bootrstrap</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Jquery</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>React</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Git</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Gitlab Runner</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>GitAhead</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>GitHub</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>CI/CD</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Yazılım Test</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <!-- third post -->
-        <div class="card-content">
-            <div class="float-left">
-                <img src="~/img/posts/last-3.jpg" width="90" height="90" alt="">
-            </div>
-            <div class="d-flex justify-content-left align-items-center last-posts-container">
-                <div>
-                    <a href="">Google inks pact for new...</a>
-                    <p class="mt-2 text-info"><i class="fa fa-calendar mr-2"></i>12 Ağustos 2021</p>
+
+                <!-- Subscribe widget -->
+                <div class="card card-side">
+                    <div class="card-title">
+                        Abone Ol
+                    </div>
+                    <hr>
+                    <div class="card-cloud-content">
+                        <input type="email" class="form-control subscribe-input" placeholder="E-Mail Adresiniz">
+                        <button class="btn btn-primary my-3 subscribe-button">Abone Ol</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- tag cloud -->
-    <div class="card card-side">
-        <div class="card-title">
-            Tag Bulutu
-        </div>
-        <hr>
-        <div class="card-cloud-content">
-            <ul class="list cat-list">
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>C#</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>WPF</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>ASP.NET</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>PostgreSQL</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>Programlama</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>Css</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>Html</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>.Net Core</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>Xamarin</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>Kotlin</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>Ubuntu</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>Linux</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>Centos</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>Mint</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>Mobile Development</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>Unity</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>Php</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>MySQL</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>XAML</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>Desktop Development</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>UI/UX</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>Design Patterns</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>Javascript</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>Bootrstrap</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>Jquery</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>React</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>Git</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>Gitlab Runner</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>GitAhead</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>GitHub</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>CI/CD</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <p>Yazılım Test</p>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Subscribe widget -->
-    <div class="card card-side">
-        <div class="card-title">
-            Abone Ol
-        </div>
-        <hr>
-        <div class="card-cloud-content">
-            <input type="email" class="form-control subscribe-input" placeholder="E-Mail Adresiniz">
-            <button class="btn btn-primary my-3 subscribe-button">Abone Ol</button>
-        </div>
-    </div>
-</div>
+</section>

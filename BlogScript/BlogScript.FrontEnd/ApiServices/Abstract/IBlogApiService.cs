@@ -9,5 +9,6 @@ namespace BlogScript.FrontEnd.ApiServices.Abstract
     public interface IBlogApiService
     {
         Task<List<BlogListModel>> GetAllAsync();
+        Task<BlogListModel> GetByIdAsync(int id);
     }
 }
