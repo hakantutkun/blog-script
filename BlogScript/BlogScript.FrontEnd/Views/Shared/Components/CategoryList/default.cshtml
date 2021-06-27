@@ -1,0 +1,23 @@
+﻿@model List<CategoryListModel>
+
+<!-- categories widget -->
+<div class="card card-side">
+    <div class="card-title">
+        Kategoriler
+    </div>
+    <hr>
+    <div class="card-content">
+        <ul class="list cat-list">
+            @foreach (var category in Model)
+            {
+                <li>
+                    <a href="#" class="d-flex">
+                        <i class="fa fa-caret-right mr-3 mt-1 text-black"></i>
+                        <p>@category.Name</p>
+                        @*<p class="ml-2">(37)</p>*@
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

@@ -1,95 +1,42 @@
 ﻿@model List<BlogListModel>
-
 <!-- blog posts colum -->
-    <div class="col-lg-8">
+<div class="col-lg-8">
 
-        @foreach (var blog in Model)
-        {
-            <div class="card single_post">
-                <div class="body">
-                    <div class="post-img">
-                        <img class="d-block img-fluid" src="~/img//@blog.ImagePath" alt="First slide">
-                    </div>
-                    <h3 class="post-title">
-                        <a href="single.html">
-                            @blog.Title
-                        </a>
-                    </h3>
-                    <p class="post-content">
-                        @blog.ShortDescription
-                    </p>
-                    <div class="actions">
-                        <a href="javascript:void(0);"
-                           class="btn btn-primary button-style float-right mr-5">Devamını Oku</a>
-                    </div>
+    @foreach (var blog in Model)
+    {
+        <div class="card single_post">
+            <div class="body">
+                <div class="post-img">
+                    <img class="d-block img-fluid" src="~/img//@blog.ImagePath" alt="First slide">
                 </div>
-                <div class="post-footer">
-                    <ul>
-                        <li><a href="#"><i class="fa fa-user"></i>TechBlog</a></li>
-                        <li><a href="#"><i class="fa fa-comments"></i> 3 Yorum</a></li>
-                    </ul>
+                <h3 class="post-title">
+                    <a href="single.html">
+                        @blog.Title
+                    </a>
+                </h3>
+                <p class="post-content">
+                    @blog.ShortDescription
+                </p>
+                <div class="actions">
+                    <a href="javascript:void(0);"
+                       class="btn btn-primary button-style float-right mr-5">Devamını Oku</a>
                 </div>
             </div>
-        }
+            <div class="post-footer">
+                <ul>
+                    <li><a href="#"><i class="fa fa-user"></i>TechBlog</a></li>
+                    <li><a href="#"><i class="fa fa-comments"></i> 3 Yorum</a></li>
+                </ul>
+            </div>
+        </div>
+    }
 
-    </div>
+</div>
 
 <!-- sidebar column -->
 <div class="col-lg-4">
 
-    <!-- categories widget -->
-    <div class="card card-side">
-        <div class="card-title">
-            Kategoriler
-        </div>
-        <hr>
-        <div class="card-content">
-            <ul class="list cat-list">
-                <li>
-                    <a href="#" class="d-flex">
-                        <i class="fa fa-caret-right mr-3 mt-1 text-black"></i>
-                        <p>Resaurant food</p>
-                        <p class="ml-2">(37)</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <i class="fa fa-caret-right mr-3 mt-1 text-black"></i>
-                        <p>Travel news</p>
-                        <p class="ml-2">(10)</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <i class="fa fa-caret-right mr-3 mt-1 text-black"></i>
-                        <p>Modern technology</p>
-                        <p class="ml-2">(3)</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <i class="fa fa-caret-right mr-3 mt-1 text-black"></i>
-                        <p>Product</p>
-                        <p class="ml-2">(11)</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <i class="fa fa-caret-right mr-3 mt-1 text-black"></i>
-                        <p>Inspiration</p>
-                        <p class="ml-2">(21)</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="d-flex">
-                        <i class="fa fa-caret-right mr-3 mt-1 text-black"></i>
-                        <p>Health Care</p>
-                        <p class="ml-2">(9)</p>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    @await Component.InvokeAsync("CategoryList");
 
     <!-- recent posts -->
     <div class="card card-side">
