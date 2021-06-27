@@ -20,5 +20,10 @@ namespace BlogScript.FrontEnd.Controllers
         {
             return View(await _blogApiService.GetAllAsync());
         }
+
+        public IActionResult BlogDetail(int id)
+        {
+            return View();
+        }
     }
 }

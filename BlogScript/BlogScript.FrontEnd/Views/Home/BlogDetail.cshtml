@@ -1,0 +1,350 @@
+﻿
+<section id="post-header">
+
+    <div class="container">
+        <div class="tag-container text-center">
+            <div class="blog-cloud-content">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <p>Gitlab-Runner</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p>CI/CD</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p>GitLab</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p>Versiyon Kontrol</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p class="blog-header">Gitlab Runner Kurulum Rehberi</p>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="blog-author-info">
+                    <p class="blog-author-name">Hakan Tutkun</p>
+                    <p class="blog-author-date">20 Haziran 2021</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="social-container text-center">
+                    <i class="fa fa-share-alt mr-3"></i>
+                    <a href="#" class="social-button-blog"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-button-blog"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-button-blog"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-button-blog"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="blog-img-container">
+            <div class="avatar-container">
+                <img src="assets/img/avatar.png" class="blog-author-avatar" alt="">
+            </div>
+            <img src="assets/img/posts/blog-post.jpg" class="img-fluid img-responsive blog-header-img mt-3" alt="">
+
+        </div>
+        <div class="col-md-12">
+
+        </div>
+    </div>
+
+</section>
+
+
+<!-- content section -->
+<section id="content">
+
+    <!-- main container -->
+    <div class="container ">
+        <div class=" card blog-container">
+            <h2 class="blog-content-header mt-0 text-black font-weight-bold">Gitlab-Runner Nedir ?</h2>
+            <p class="blog-content-paragraph">
+                Gitlab runner, gitlab-ci ile oluşturulan jobların çalıştırılması ve bu jobların çalışması sonucunda
+                oluşan çıktıların tekrar gitlaba gönderilmesi için kullanılan açık kaynak kodlu bir projedir.
+                Temelde Gitlab API servisleri aracılığıyla haberleştiği için GitLab kurulu olan makinede çalışması
+                gerekli değildir. İnternet erişimi olan bir makinede kurulup kullanılabilir.
+            </p>
+            <p class="blog-content-paragraph">
+                Gitlab runner docker, Linux, MacOS, Windows gibi çeşitli ortamlarda çalıştırılabilmektedir. Bu
+                dokümanda Windows üzerinden kurulumu ve .NET Framework projelerinin derlenip kurulum dosyasının
+                oluşturulması anlatılmaktadır.
+            </p>
+            <h2 class="blog-content-header  text-black font-weight-bold">
+                PowerShell Üzerinden Gitlab Runner Kurulumu
+            </h2>
+
+            <p class="blog-content-paragraph">
+                Öncelikle aşağıda verilen adreste bulunan Installation kısmından Gitlab Runner’ın son versiyonu
+                kurulacak bilgisayar mimarisine göre 64-bit veya 32-bit seçilerek indirilmelidir.
+            </p>
+            <p class="blog-content-paragraph">
+                İndirmek için <a href="https://docs.gitlab.com/runner/install/windows.html">buraya tıklayın...</a>
+            </p>
+            <p class="blog-content-paragraph">
+                İndirilen dosya C diski içerisinde “Gitla-Runner” isimli bir klasör oluşturularak içine
+                atılmalıdır. Daha sonra bu dosyanın ismi “gitlab-runner.exe” olarak düzenlenmelidir.
+            </p>
+            <p class="text-center mt-5">
+                <img src="assets/img/post-content/lxzjco1_124693xz_caspdwo_213.png"
+                     class="img-responsive img-fluid shadow" alt="" />
+            </p>
+            <p class="img-info-container text-center">
+                <strong><i>Resim 1:</i></strong>
+                <i>Gitlab-Runner kurulum yapısının oluşturulması</i>
+            </p>
+            <p>
+                Daha sonra PowerShell Administrator olarak çalıştırılıp ilgili dosya içine konumlandıktan sonra
+                kurulum işlemi için aşağıdaki komutlar kullanılmalıdır.
+                <br><br>
+                - .\gitlab-runner.exe install
+                <br><br>
+                - .\gitlab-runner.exe start
+                <br><br>
+                Bu işlemlerden sonra gitlab-runner Windows makinesinde servis olarak çalışmaya başlar. Servisler
+                sekmesinden görüntülenebilir.
+            </p>
+            <p class="text-center mt-5">
+                <img src="assets/img/post-content/253twegsd_asdasq_asd3q1215.png"
+                     class="img-responsive img-fluid shadow w-100" alt="" />
+            </p>
+            <p class="img-info-container text-center">
+                <strong><i>Resim 2:</i></strong>
+                <i>Gitlab-Runner kurulum yapısının oluşturulması</i>
+            </p>
+            <h2 class="blog-content-header text-black font-weight-bold">
+                Gitlab-Runner ile GitLab’a Register İşlemi
+            </h2>
+            <p class="blog-content-paragraph">
+                Kurulum işlemi tamamlandıktan sonra GitLab servisleriyle haberleşmesi için PowerShell üzerinden
+                Register işleminin yapılması gerekmektedir. Register işlemini yapabilmemiz için bize gereken
+                bilgileri GitLab üzerinden almamız gerekir.
+            </p>
+            <p class="blog-content-paragraph">
+                Bu bilgileri almak için Gitlab üzerinde runner kullanılacak herhangi bir projeye gidip Settings
+                sekmesinden CI/CD bölümüne girilmelidir. Burada bulunan Runners sekmesi genişletildiğinde Spesific
+                Runner kurulumu için gereken bilgiler görüntülenecektir.
+            </p>
+            <p class="blog-content-paragraph">
+                Spesifik olarak kurulan bu runner daha sonra ayarlar kısmından tüm projelerde çalışacak şekilde
+                ayarlanacaktır.
+            </p>
+            <p class="text-center mt-5">
+                <img src="assets/img/post-content/12321412axz124125.png" class="img-responsive img-fluid shadow"
+                     alt="" />
+            </p>
+            <p class="img-info-container text-center">
+                <strong><i>Resim 3:</i></strong>
+                <i>Gitlab-Runner kurulum yapısının oluşturulması</i>
+            </p>
+        </div>
+        <div class="about-author">
+            <h3 class="mb-4">Yazar Hakkında</h3>
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="avatar-container text-center my-5">
+                            <img src="assets/img/avatar.png" class="img-responsive img-fluid about-author-avatar"
+                                 alt="">
+                            <div class="blog-author-info mt-4">
+                                <p class="blog-author-name">Hakan Tutkun</p>
+                                <p class="blog-author-date">hakan.tutkun@gmail.com</p>
+                            </div>
+                            <div class="social-container text-center">
+                                <a href="#" class="social-button"><i class="fab fa-gitlab"></i></a>
+                                <a href="#" class="social-button"><i class="fab fa-github"></i></a>
+                                <a href="#" class="social-button"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-button"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 d-flex justify-content-center align-items-center">
+                        <p class="about-author-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                            ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                            in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                            ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                            in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="comments-header">
+            <h3 class="mb-4">Yorum Yaz</h3>
+            <div class="card send-comment p-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Adınız</label>
+                            <input type="email" class="form-control comment-input" id="exampleInputEmail1"
+                                   aria-describedby="emailHelp" placeholder="Adınızı giriniz...">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email Adresiniz</label>
+                            <input type="email" class="form-control comment-input" id="exampleInputEmail1"
+                                   aria-describedby="emailHelp" placeholder="Email adresinizi giriniz...">
+                            <small id="emailHelp" class="form-text text-muted">
+                                E-Mail adresiniz gizli
+                                kalacaktır.
+                            </small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Mesajınız:</label>
+                            <textarea class="form-control comment-textarea" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-2 jumbotron-button">Gönder</button>
+                    </div>
+                </div>
+            </div>
+            <h3>2 Yorum</h3>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="media g-mb-30 media-comment">
+                        <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15"
+                             src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Image Description">
+                        <div class="media-body card  u-shadow-v18 g-pa-30">
+                            <div class="g-mb-15">
+                                <h5 class="h5 g-color-gray-dark-v1 mb-1">John Doe</h5>
+                                <span class="g-color-gray-dark-v4 g-font-size-12">21 Haziran 2021 16:50</span>
+                            </div>
+
+                            <p class="my-2">
+                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                                ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra
+                                turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
+                                felis in faucibus ras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                            </p>
+
+                            <ul class="list-inline d-sm-flex my-0">
+                                <li class="list-inline-item g-mr-20">
+                                    <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                                        <i class="fa fa-thumbs-up g-pos-rel g-top-1 g-mr-3 "></i>
+                                        178
+                                    </a>
+                                </li>
+                                <li class="list-inline-item g-mr-20">
+                                    <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                                        <i class="fa fa-thumbs-down g-pos-rel g-top-1 g-mr-3 ml-2"></i>
+                                        34
+                                    </a>
+                                </li>
+                                <li class="list-inline-item ml-auto">
+                                    <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                                        <i class="fa fa-reply g-pos-rel g-top-1 g-mr-3"></i>
+                                        Cevapla
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="media g-mb-30 media-comment  ml-5">
+                        <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15"
+                             src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Image Description">
+                        <div class="media-body card  u-shadow-v18 g-pa-30">
+                            <div class="g-mb-15">
+                                <h5 class="h5 g-color-gray-dark-v1 mb-1">John Doe</h5>
+                                <span class="g-color-gray-dark-v4 g-font-size-12">21 Haziran 2021 16:50</span>
+                            </div>
+
+                            <p class="my-2">
+                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                                ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra
+                                turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
+                                felis in faucibus ras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                            </p>
+
+                            <ul class="list-inline d-sm-flex my-0">
+                                <li class="list-inline-item g-mr-20">
+                                    <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                                        <i class="fa fa-thumbs-up g-pos-rel g-top-1 g-mr-3"></i>
+                                        178
+                                    </a>
+                                </li>
+                                <li class="list-inline-item g-mr-20">
+                                    <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                                        <i class="fa fa-thumbs-down g-pos-rel g-top-1 g-mr-3 ml-2"></i>
+                                        34
+                                    </a>
+                                </li>
+                                <li class="list-inline-item ml-auto">
+                                    <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                                        <i class="fa fa-reply g-pos-rel g-top-1 g-mr-3"></i>
+                                        Cevapla
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="media g-mb-30 media-comment">
+                        <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15"
+                             src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Image Description">
+                        <div class="media-body card  u-shadow-v18 g-pa-30">
+                            <div class="g-mb-15">
+                                <h5 class="h5 g-color-gray-dark-v1 mb-1">John Doe</h5>
+                                <span class="g-color-gray-dark-v4 g-font-size-12">11 Temmuz 2021 06:21</span>
+                            </div>
+
+                            <p class="my-2">
+                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                                ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra
+                                turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
+                                felis in faucibus ras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                            </p>
+
+                            <ul class="list-inline d-sm-flex my-0">
+                                <li class="list-inline-item g-mr-20">
+                                    <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                                        <i class="fa fa-thumbs-up g-pos-rel g-top-1 g-mr-3"></i>
+                                        178
+                                    </a>
+                                </li>
+                                <li class="list-inline-item g-mr-20">
+                                    <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                                        <i class="fa fa-thumbs-down g-pos-rel g-top-1 g-mr-3 ml-2"></i>
+                                        34
+                                    </a>
+                                </li>
+                                <li class="list-inline-item ml-auto">
+                                    <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                                        <i class="fa fa-reply g-pos-rel g-top-1 g-mr-3"></i>
+                                        Cevapla
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
