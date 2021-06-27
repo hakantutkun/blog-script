@@ -1,132 +1,38 @@
-﻿<!-- blog posts colum -->
-<div class="col-lg-8">
+﻿@model List<BlogListModel>
 
-    @*first post*@
-    <div class="card single_post">
-        <div class="body">
-            <div class="post-img">
-                <img class="d-block img-fluid" src="~/img//posts/blog-post.jpg" alt="First slide">
-            </div>
-            <h3 class="post-title">
-                <a href="single.html">
-                    Google inks pact for new 35-storey
-                    office
-                </a>
-            </h3>
-            <p class="post-content">
-                It is a long established fact that a reader will be distracted by
-                the
-                readable content of a page when looking at its layout. The point of using Lorem Ipsum is
-                that it has a more-or-less normal distribution of letters, as opposed to using 'Content
-                here, content here', making it look like readable English. Many desktop publishing
-                packages
-                and web page editors now use Lorem Ipsum as their default model text, and a search for
-                'lorem ipsum' will uncover many web sites still in their infancy.
-            </p>
-            <div class="actions">
-                <a href="javascript:void(0);"
-                   class="btn btn-primary button-style float-right mr-5">Devamını Oku</a>
-            </div>
-        </div>
-        <div class="post-footer">
-            <ul>
-                <li><a href="#"><i class="fa fa-user"></i> TechBlog</a></li>
-                <li><a href="#"><i class="fa fa-comments"></i> 3 Yorum</a></li>
-            </ul>
-        </div>
-    </div>
+<!-- blog posts colum -->
+    <div class="col-lg-8">
 
-    @*second post*@
-    <div class="card single_post">
-        <div class="body">
-            <div class="post-img">
-                <img class="d-block img-fluid" src="~/img//posts/post-2.jpg" alt="First slide">
-            </div>
-            <div class="post-date">
-                <div>
-                    <div class="text-center">
-                        <div class="post-date-day">05</div>
+        @foreach (var blog in Model)
+        {
+            <div class="card single_post">
+                <div class="body">
+                    <div class="post-img">
+                        <img class="d-block img-fluid" src="~/img//@blog.ImagePath" alt="First slide">
                     </div>
-                    <div>
-                        <div class="post-date-month">Haz</div>
+                    <h3 class="post-title">
+                        <a href="single.html">
+                            @blog.Title
+                        </a>
+                    </h3>
+                    <p class="post-content">
+                        @blog.ShortDescription
+                    </p>
+                    <div class="actions">
+                        <a href="javascript:void(0);"
+                           class="btn btn-primary button-style float-right mr-5">Devamını Oku</a>
                     </div>
                 </div>
-            </div>
-            <h3 class="post-title">
-                <a href="single.html">
-                    Google inks pact for new 35-storey
-                    office
-                </a>
-            </h3>
-            <p class="post-content">
-                It is a long established fact that a reader will be distracted by
-                the
-                readable content of a page when looking at its layout. The point of using Lorem Ipsum is
-                that it has a more-or-less normal distribution of letters, as opposed to using 'Content
-                here, content here', making it look like readable English. Many desktop publishing
-                packages
-                and web page editors now use Lorem Ipsum as their default model text, and a search for
-                'lorem ipsum' will uncover many web sites still in their infancy.
-            </p>
-            <div class="actions">
-                <a href="javascript:void(0);"
-                   class="btn btn-primary button-style float-right mr-5">Devamını Oku</a>
-            </div>
-        </div>
-        <div class="post-footer">
-            <ul>
-                <li><a href="#"><i class="fa fa-user"></i> TechBlog</a></li>
-                <li><a href="#"><i class="fa fa-comments"></i> 3 Yorum</a></li>
-            </ul>
-        </div>
-    </div>
-
-    @*third post*@
-    <div class="card single_post">
-        <div class="body">
-            <div class="post-img">
-                <img class="d-block img-fluid" src="~/img//posts/post-3.jpg" alt="First slide">
-            </div>
-            <div class="post-date">
-                <div>
-                    <div class="text-center">
-                        <div class="post-date-day">05</div>
-                    </div>
-                    <div>
-                        <div class="post-date-month">Haz</div>
-                    </div>
+                <div class="post-footer">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-user"></i>TechBlog</a></li>
+                        <li><a href="#"><i class="fa fa-comments"></i> 3 Yorum</a></li>
+                    </ul>
                 </div>
             </div>
-            <h3 class="post-title">
-                <a href="single.html">
-                    Google inks pact for new 35-storey
-                    office
-                </a>
-            </h3>
-            <p class="post-content">
-                It is a long established fact that a reader will be distracted by
-                the
-                readable content of a page when looking at its layout. The point of using Lorem Ipsum is
-                that it has a more-or-less normal distribution of letters, as opposed to using 'Content
-                here, content here', making it look like readable English. Many desktop publishing
-                packages
-                and web page editors now use Lorem Ipsum as their default model text, and a search for
-                'lorem ipsum' will uncover many web sites still in their infancy.
-            </p>
-            <div class="actions">
-                <a href="javascript:void(0);"
-                   class="btn btn-primary button-style float-right mr-5">Devamını Oku</a>
-            </div>
-        </div>
-        <div class="post-footer">
-            <ul>
-                <li><a href="#"><i class="fa fa-user"></i> TechBlog</a></li>
-                <li><a href="#"><i class="fa fa-comments"></i> 3 Yorum</a></li>
-            </ul>
-        </div>
-    </div>
+        }
 
-</div>
+    </div>
 
 <!-- sidebar column -->
 <div class="col-lg-4">

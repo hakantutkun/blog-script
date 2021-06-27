@@ -1,4 +1,5 @@
-﻿using BlogScript.FrontEnd.Models;
+﻿using BlogScript.FrontEnd.ApiServices.Abstract;
+using BlogScript.FrontEnd.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BlogScript.FrontEnd.ApiServices.Concrete
 {
-    public class BlogApiManager
+    public class BlogApiManager : IBlogApiService
     {
         private readonly HttpClient _httpClient;
 
