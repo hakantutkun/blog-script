@@ -1,10 +1,295 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/libs/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fontawesome core CSS -->
+    <link href="~/libs/font-awesome/css/all.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/css/style-light.css" />
+    <link rel="stylesheet" href="~/css/style-dark.css" />
 </head>
+
 <body>
-    @RenderBody()
+    <!-- header section -->
+    <section id="header">
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <div class="logo"><i class="fa fa-check"></i></div>
+                <a class="navbar-brand" href="blog.html">TechBlog</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link active-menu" href="blog.html">
+                                Anasayfa <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Kategoriler
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div class="card-content">
+                                    <ul class="list cat-list">
+                                        <li>
+                                            <a href="#" class="d-flex">
+                                                <p>Resaurant food</p>
+                                                <p class="ml-2">(37)</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="d-flex">
+                                                <p>Travel news</p>
+                                                <p class="ml-2">(10)</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="d-flex">
+                                                <p>Modern technology</p>
+                                                <p class="ml-2">(3)</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="d-flex">
+                                                <p>Product</p>
+                                                <p class="ml-2">(11)</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="d-flex">
+                                                <p>Inspiration</p>
+                                                <p class="ml-2">(21)</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="d-flex">
+                                                <p>Health Care</p>
+                                                <p class="ml-2">(9)</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Hakkımızda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">İletişim</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline search-form" role="form">
+                        <div class="form-group has-success has-feedback">
+                            <label class="control-label" for="inputSuccess4"></label>
+                            <input type="text" class="form-control  search-area" id="inputSuccess4"
+                                   placeholder="Arama Yap">
+                            <i class="fa fa-search form-control-feedback"></i>
+                        </div>
+                    </form>
+
+                    <div class="social-container text-center">
+                        <a href="#" class="social-button"><i class="fa fa-moon"></i></a>
+                        <a href="#" class="social-button"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-button"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-button"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <!-- carousel section -->
+    <section id="carousel">
+        <div class="container">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="jumbotron">
+                            <div class="jumbotron-container">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-6 text-center jumbotron-image-container">
+                                        <img class="jumbotron-image" src="~/img/desktop.png">
+                                    </div>
+                                    <div class="col-lg-8 col-md-6 text-left jumbotron-content-container">
+                                        <div>
+                                            <h1 class="display-5 mb-4 font-weight-bold jumbotron-header">
+                                                WPF İle
+                                                Masaüstü Uygulama
+                                                Geliştirme
+                                            </h1>
+                                            <p class="lead jumbotron-content">
+                                                WPF Visual Studio üzerinde C# geliştiricilerine sunulan görsel
+                                                tasarım ortamıdır. Bu araç ile birlikte kullanıcılar görsel açıdan
+                                                her aşamasına müdahale edebileceği uygulamalar geliştirebilmekte. Bu
+                                                noktada ise karşımıza XAML ( extensible application markup language
+                                                ) çıkmakta. Burada kısa bir parantez açarak kısaca XAML (zemıl)
+                                                nedir sorusuna
+                                                cevap verelim.
+                                            </p>
+                                            <div class="jumbotron-button-container">
+                                                <a class="btn btn-primary jumbotron-button ">Devamını Oku</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="jumbotron">
+                            <div class="jumbotron-container">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-6 text-center jumbotron-image-container">
+                                        <img class="jumbotron-image" src="~/img/postgresql.png">
+                                    </div>
+                                    <div class="col-lg-8 col-md-6 text-left jumbotron-content-container">
+                                        <div>
+                                            <h1 class="display-5 mb-4 font-weight-bold jumbotron-header">
+                                                PostgreSQL
+                                                Dersleri
+                                            </h1>
+                                            <p class="lead jumbotron-content">
+                                                PostgreSQL, güçlü özellikler ve avantajlara sahip, açık kaynaklı ve
+                                                tamamen ücretsiz nesne ilişkisel veri tabanı sistemidir. SQL dilinin
+                                                güvenlik, depolanabilirlik ve ölçeklendirilebilme özelliklerinden
+                                                faydalanan PostgreSQL, birçok alanda veri tabanı yöneticisi olarak
+                                                da kullanılmaktadır. PostgreSQL’in doğuşunun hikayesi 1986 yılına
+                                                dek eskiye dayanıyor.
+                                            </p>
+                                            <div class="jumbotron-button-container">
+                                                <a class="btn btn-primary jumbotron-button ">Devamını Oku</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="jumbotron">
+                            <div class="jumbotron-container">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-6 text-center jumbotron-image-container">
+                                        <img class="jumbotron-image" src="~/img/gitlab-runner.png">
+                                    </div>
+                                    <div class="col-lg-8 col-md-6 text-left jumbotron-content-container">
+                                        <div>
+                                            <h1 class="display-5 mb-4 font-weight-bold jumbotron-header">
+                                                Gitlab Runner
+                                                Kurulumu
+                                            </h1>
+                                            <p class="lead jumbotron-content">
+                                                Gitlab'in geliştirdiği her toolu ayrı bir uygulama
+                                                gibi koşabilme
+                                                vizyonunun güzel
+                                                bir
+                                                örneği bence gitlab-runner. Özünde, gitlab-ci ile oluşturduğumuz
+                                                jobları çalıştırmak
+                                                ve
+                                                çıktılarını
+                                                gitlabe geri göndermek için kullanılan açık kaynak bir projedir...
+                                            </p>
+                                            <div class="jumbotron-button-container">
+                                                <a class="btn btn-primary jumbotron-button ">Devamını Oku</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- content section -->
+    <section id="content">
+
+        <!-- main container -->
+        <div class="container">
+
+            <div class="row">
+                @RenderBody()
+            </div>
+        </div>
+    </section>
+
+    <!-- footer section -->
+    <section id="footer">
+        <!-- For demo purpose -->
+        <!-- <div class="footer-seperator">
+            <div class="container">
+                <div>
+                    <div class="logo float-left"><i class="fa fa-check"></i></div>
+                    <div class="font-weight-bold pt-2">TechBlog</div>
+                </div>
+            </div>
+        </div> -->
+        <!-- End -->
+        <!-- Footer -->
+        <footer class="bg-white">
+
+
+            <!-- Copyrights -->
+            <div class="bg-light py-4 copyright-section">
+                <div class="container text-center">
+                    <div>
+                        <div class="logo float-left"><i class="fa fa-check"></i></div>
+                        <div class="font-weight-bold pt-2 float-left brand">TechBlog</div>
+                    </div>
+                    <p class="mb-0 py-2 text-right text-light">© 2021 TechBlog | Her hakkı saklıdır.</p>
+                </div>
+            </div>
+        </footer>
+        <!-- End -->
+    </section>
+
+    <section id="dark-mode-container">
+        <i class="dntoggle fa fa-moon " onclick="nightModeToggler()"></i>
+    </section>
+
+    <!-- Jquery Core JS -->
+    <script src="~/libs/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JS -->
+    <script src="~/libs/twitter-bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/libs/twitter-bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Fontawesome Core JS -->
+    <script src="~/libs/font-awesome/js/all.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="~/js/Scripts.js"></script>
 </body>
+
 </html>

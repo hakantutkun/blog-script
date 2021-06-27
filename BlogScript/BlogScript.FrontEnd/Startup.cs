@@ -29,6 +29,9 @@ namespace BlogScript.FrontEnd
 
             app.UseRouting();
 
+            // wwwroot disari acildi.
+            app.UseStaticFiles();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
