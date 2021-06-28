@@ -1,9 +1,11 @@
 ﻿using BlogScript.Business.Abstract;
 using BlogScript.DataAccess.Abstract;
+using BlogScript.DTOs.DTOs.AppUserDTOs;
 using BlogScript.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BlogScript.Business.Concrete
 {
@@ -14,6 +16,11 @@ namespace BlogScript.Business.Concrete
         public AppUserManager(IGenericDal<AppUser> genericDal) : base(genericDal)
         {
             _genericDal = genericDal;
+        }
+
+        public async Task<AppUser> CheckUserAsync(AppUserLoginDto appUserLoginDto)
+        {
+            return await _genericDal.GetAsync(i => i.UserName == appUserLoginDto.UserName && i.Password == appUserLoginDto.Password);
         }
     }
 }

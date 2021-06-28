@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BlogScript.DataAccess\BlogScript.DataAccess.csproj" />
+    <ProjectReference Include="..\BlogScript.DTOs\BlogScript.DTOs.csproj" />
     <ProjectReference Include="..\BlogScript.Entities\BlogScript.Entities.csproj" />
   </ItemGroup>
 
