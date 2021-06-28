@@ -9,6 +9,7 @@ using BlogScript.DTOs.DTOs.BlogDTOs;
 using BlogScript.Entities.Concrete;
 using BlogScript.WebApi.Enums;
 using BlogScript.WebApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -40,6 +41,7 @@ namespace BlogScript.WebApi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Create([FromForm]BlogAddModel blogAddModel)
         {
             var uploadModel = await UploadFileAsync(blogAddModel.Image, "image/jpeg", UploadType.Create);
@@ -62,6 +64,7 @@ namespace BlogScript.WebApi.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize]
         public async Task<IActionResult> Update(int id, [FromForm]BlogUpdateModel blogUpdateModel)
         {
             if(id != blogUpdateModel.Id)
@@ -109,6 +112,7 @@ namespace BlogScript.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> Delete(int id)
         {
             await _blogService.RemoveAsync(new Blog { Id = id });

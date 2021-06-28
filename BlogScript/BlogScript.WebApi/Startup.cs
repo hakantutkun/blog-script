@@ -73,6 +73,8 @@ namespace BlogScript.WebApi
             // wwwroot klasorune erisebilmek icin
             app.UseStaticFiles();
 
+            app.UseAuthentication();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

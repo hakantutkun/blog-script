@@ -6,6 +6,7 @@ using AutoMapper;
 using BlogScript.Business.Abstract;
 using BlogScript.DTOs.DTOs.CategoryDTOs;
 using BlogScript.Entities.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -37,6 +38,7 @@ namespace BlogScript.WebApi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Create(CategoryAddDto categoryAddDto)
         {
             await _categoryService.AddAsync(_mapper.Map<Category>(categoryAddDto));
@@ -44,6 +46,7 @@ namespace BlogScript.WebApi.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize]
         public async Task<IActionResult> Update(int id, CategoryUpdateDto categoryUpdateDto)
         {
             if (id != categoryUpdateDto.Id)
@@ -57,6 +60,7 @@ namespace BlogScript.WebApi.Controllers
         }
 
         [HttpDelete]
+        [Authorize]
         public async Task<IActionResult> Delete(int id)
         {
             await _categoryService.RemoveAsync(new Category { Id = id });

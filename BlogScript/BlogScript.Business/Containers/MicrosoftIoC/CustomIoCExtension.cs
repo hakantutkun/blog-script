@@ -1,5 +1,7 @@
 ﻿using BlogScript.Business.Abstract;
 using BlogScript.Business.Concrete;
+using BlogScript.Business.Tools;
+using BlogScript.Business.Tools.JwtTool;
 using BlogScript.DataAccess.Abstract;
 using BlogScript.DataAccess.Concrete.EFCore.Repositories;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,6 +29,8 @@ namespace BlogScript.Business.Containers.MicrosoftIoC
 
             services.AddScoped<ICommentService, CommentManager>();
             services.AddScoped<ICommentDal, EfCommentRepository>();
+
+            services.AddScoped<IJwtService, JwtManager>();
         }
     }
 }
