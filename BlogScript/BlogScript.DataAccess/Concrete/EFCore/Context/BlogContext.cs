@@ -11,7 +11,7 @@ namespace BlogScript.DataAccess.Concrete.EFCore.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"server=.\SQLEXPRESS;database=BlogScript; integrated security=true;");
+            optionsBuilder.UseSqlServer(@"server=DESKTOP-7IJG156;database=BlogScript; integrated security=true;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
